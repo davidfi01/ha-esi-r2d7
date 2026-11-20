@@ -1,0 +1,43 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect an ESI R2D7 controller",
+        "description": "Select the AUX-2 RS-232 proxy port. Commands use 9600 8N1. Setup only checks that the port opens; it cannot confirm a controller is attached. IMPORTANT: Stop on any channel stops ALL moving blinds in that R2D7 system; the controller has no per-blind stop. A separate 'Stop ALL blinds' button is added for each system.",
+        "data": {
+          "device": "Serial port",
+          "system": "R2D7 system number (1–7)",
+          "first_channel": "First blind channel",
+          "last_channel": "Last blind channel"
+        }
+      }
+    },
+    "error": {
+      "invalid_channel_range": "First channel must not exceed last channel",
+      "cannot_connect": "Could not open this serial port. Check that AUX-2 is online and the port is unused.",
+      "unknown": "Unexpected error. Check the Home Assistant log."
+    },
+    "abort": {
+      "already_configured": "This serial port is already used by an ESI R2D7 entry"
+    }
+  },
+  "entity": {
+    "cover": {
+      "blind": {
+        "state_attributes": {
+          "last_command": {
+            "name": "Last command",
+            "state": {
+              "open": "Open",
+              "closed": "Closed",
+              "stopped": "Stopped"
+            }
+          },
+          "stop_scope": {
+            "name": "Stop affects"
+          }
+        }
+      }
+    }
+  }
+}

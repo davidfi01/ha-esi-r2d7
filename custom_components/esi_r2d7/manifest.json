@@ -1,0 +1,23 @@
+{
+  "domain": "esi_r2d7",
+  "name": "ESI R2D7 Serial",
+  "after_dependencies": [
+    "esphome"
+  ],
+  "codeowners": [
+    "@davidfi01"
+  ],
+  "config_flow": true,
+  "connectivity": [
+    "serial"
+  ],
+  "dependencies": [
+    "usb"
+  ],
+  "documentation": "https://github.com/davidfi01/ha-esi-r2d7",
+  "integration_type": "hub",
+  "iot_class": "assumed_state",
+  "issue_tracker": "https://github.com/davidfi01/ha-esi-r2d7/issues",
+  "requirements": [],
+  "version": "0.3.1"
+}
