@@ -11,7 +11,7 @@ from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CONF_SYSTEM, DOMAIN, RECENT_MOVE_SECONDS, R2D7ConfigEntry
 from .cover import stopped_signal
-from .protocol import CONNECT_ERRORS, R2D7Connection
+from esi_r2d7 import CONNECT_ERRORS, R2D7Connection
 
 
 async def async_setup_entry(

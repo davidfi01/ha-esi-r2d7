@@ -18,6 +18,8 @@
   "integration_type": "hub",
   "iot_class": "assumed_state",
   "issue_tracker": "https://github.com/davidfi01/ha-esi-r2d7/issues",
-  "requirements": [],
-  "version": "0.3.1"
+  "requirements": [
+    "esi-r2d7==0.1.0"
+  ],
+  "version": "0.4.0"
 }

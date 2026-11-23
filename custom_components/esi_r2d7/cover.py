@@ -28,7 +28,7 @@ from .const import (
     RECENT_MOVE_SECONDS,
     R2D7ConfigEntry,
 )
-from .protocol import CONNECT_ERRORS, R2D7Connection
+from esi_r2d7 import CONNECT_ERRORS, R2D7Connection
 
 COMMAND_OPEN = "open"
 COMMAND_CLOSED = "closed"

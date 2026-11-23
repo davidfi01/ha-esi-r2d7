@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING
 from homeassistant.config_entries import ConfigEntry
 
 if TYPE_CHECKING:
-    from .protocol import R2D7Connection
+    from esi_r2d7 import R2D7Connection
 
 DOMAIN = "esi_r2d7"
 LOGGER = logging.getLogger(__package__)

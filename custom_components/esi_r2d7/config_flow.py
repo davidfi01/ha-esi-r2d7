@@ -20,7 +20,7 @@ from .const import (
     DOMAIN,
     LOGGER,
 )
-from .protocol import CONNECT_ERRORS, R2D7Connection
+from esi_r2d7 import CONNECT_ERRORS, R2D7Connection
 
 
 class EsiR2D7ConfigFlow(ConfigFlow, domain=DOMAIN):

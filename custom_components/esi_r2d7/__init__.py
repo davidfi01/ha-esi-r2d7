@@ -11,7 +11,7 @@ from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers.event import async_call_later
 
 from .const import CONF_SYSTEM, LOGGER, R2D7ConfigEntry
-from .protocol import CONNECT_ERRORS, R2D7Connection
+from esi_r2d7 import CONNECT_ERRORS, R2D7Connection
 
 PLATFORMS = [Platform.BUTTON, Platform.COVER]
 

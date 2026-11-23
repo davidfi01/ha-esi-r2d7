@@ -2,7 +2,7 @@
 
 Home Assistant integration for ESI R2D7 RS-232 blind controllers. It follows the configuration, connection and entity design of Home Assistant's [Denon RS-232 integration](https://github.com/home-assistant/core/tree/dev/homeassistant/components/denon_rs232). It works with the **stock Home Assistant Connect AUX-2 ESPHome serial proxy** through the Home Assistant serial port selector, and with a local serial port. **No AUX-2 firmware change is required**; Bluetooth proxy, audio, Z-Wave proxy and other AUX-2 functions remain intact.
 
-**Requires Home Assistant 2026.11.0 or newer.** The integration uses the serialx version that Home Assistant itself ships; it does not pin its own.
+**Requires Home Assistant 2026.11.0 or newer.** The protocol code is in the [`esi-r2d7`](https://pypi.org/project/esi-r2d7/) library, which Home Assistant installs from PyPI. It uses the serialx version that Home Assistant itself ships.
 
 ## CRITICAL: STOP IS SYSTEM-WIDE
 
@@ -55,11 +55,11 @@ Because Stop is system-wide, each R2D7 system also gets a **Stop ALL blinds** bu
 
 ## Files
 
-`manifest.json` declares a serial integration; `translations/en.json` holds the UI text (generated from `strings.json` by `build_package.py`); `config_flow.py` uses `SerialPortSelector()`; `__init__.py` manages the serial connection; `protocol.py` implements the command grammar using `serialx`, which Home Assistant extends for `esphome-hass://` URLs; `cover.py` builds the blind entities; and `button.py` builds the Stop ALL button.
+`manifest.json` declares a serial integration; `translations/en.json` holds the UI text (generated from `strings.json` by `build_package.py`); `config_flow.py` uses `SerialPortSelector()`; `__init__.py` manages the serial connection; the [`esi-r2d7`](https://github.com/davidfi01/esi-r2d7) library implements the command grammar using `serialx`, which Home Assistant extends for `esphome-hass://` URLs; `cover.py` builds the blind entities; and `button.py` builds the Stop ALL button.
 
 ## Tests
 
-`tests/` holds protocol unit tests. `tests_review/` holds Home Assistant integration tests; they need Python 3.14.2 or newer, `homeassistant==2026.11.2` and the matching `pytest-homeassistant`. They use loopback sockets only, with no hardware.
+The protocol tests are in the [`esi-r2d7`](https://github.com/davidfi01/esi-r2d7) library. `tests_review/` holds Home Assistant integration tests; they need Python 3.14.2 or newer, `homeassistant==2026.11.2` and the matching `pytest-homeassistant`. They use loopback sockets only, with no hardware.
 
 ## Issues
 
